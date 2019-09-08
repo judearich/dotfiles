@@ -37,7 +37,11 @@ endif
 
 "End dein Scripts-------------------------
 
+" XDG Directories
 set directory=$XDG_CACHE_HOME/nvim/
+set backupdir=$XDG_CACHE_HOME/nvim/
+set viminfo+=$XDG_CACHE_HOME/nvim/viminfo
+
 set number
 set colorcolumn=101
 highlight ColorColumn ctermbg=8

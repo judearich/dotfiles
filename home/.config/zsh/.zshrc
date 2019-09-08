@@ -11,6 +11,7 @@ export LESSHISTFILE=- # Less no history
 alias ls='ls --color=auto'
 alias ta='tmux -f $XDG_CONFIG_HOME/tmux/tmux.conf a'
 alias tmux='tmux -f $XDG_CONFIG_HOME/tmux/tmux.conf'
+export VIMINIT='let $MYVIMRC="$XDG_CONFIG_HOME/nvim/init.vim" | source $MYVIMRC'
 
 # Options
 setopt histignorealldups # History is all unique
