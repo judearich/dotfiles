@@ -1,7 +1,7 @@
 # Set up the prompt
 
 autoload -Uz promptinit; promptinit
-prompt clint red cyan green orange yellow
+prompt bart green blue yellow cyan
 
 # Set Variables
 export GNUPGHOME="$XDG_DATA_HOME/gnupg"
