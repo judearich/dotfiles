@@ -1,6 +1,6 @@
-"Dein Scripts-----------------------------
+" Dein Scripts-----------------------------
 if &compatible
-	  set nocompatible               " Be iMproved
+  set nocompatible " Be iMproved
 endif
 
 " Required:
@@ -17,7 +17,7 @@ if dein#load_state('/home/jrich/.cache/dein')
   " Add or remove your plugins here like this:
   call dein#add('vim-airline/vim-airline')
   call dein#add('cespare/vim-toml')
-  "call dein#add('vim-airline/vim-airline-themes')
+  call dein#add('vim-airline/vim-airline-themes')
   "call dein#add('Shougo/neosnippet.vim')
   "call dein#add('Shougo/neosnippet-snippets')
 
@@ -34,18 +34,12 @@ syntax enable
 if dein#check_install()
   call dein#install()
 endif
-
 "End dein Scripts-------------------------
 
-" XDG Directories
-set directory=$XDG_CACHE_HOME/nvim/
-set backupdir=$XDG_CACHE_HOME/nvim/
-set viminfo+=$XDG_CACHE_HOME/nvim/viminfo
 
+set directory=$XDG_CACHE_HOME/nvim/
 set number
 set colorcolumn=101
+let g:airline_theme='wombat' " TODO: Create custom airline theme
 highlight ColorColumn ctermbg=8
 highlight LineNr ctermfg=7
-
-
-" Airline color section
