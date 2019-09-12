@@ -14,8 +14,11 @@ fi
 
 ZDOTDIR="${XDG_CONFIG_DIR}/zsh"
 
-export GNUPGHOME="$XDG_DATA_HOME/gnupg" # gpg use XDG dirs
+export GNUPGHOME="${XDG_DATA_DIR}/gnupg" # gpg use XDG dirs
 export LESSHISTFILE=- # Less no history
+
+export MYVIMRC="${XDG_CONFIG_DIR}/nvim/init.vim"
+export VIMINIT="source $MYVIMRC"
 
 # the dynamic duo
 export EDITOR=vi

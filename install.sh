@@ -15,7 +15,7 @@ fi
 
 
 # Install dotfiles
-mkdir -p ${XDG_CACHE_DIR}/nvim   # Make cache directories
+mkdir -p ${XDG_CACHE_DIR}/vim   # Make cache directories
 mkdir -p ${XDG_DATA_DIR}	 # Make data directory
 mkdir -p ${XDG_CONFIG_DIR}	 # Make config directory
 
