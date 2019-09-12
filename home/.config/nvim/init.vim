@@ -18,8 +18,6 @@ if dein#load_state('~/.local/share/dein')
   call dein#add('vim-airline/vim-airline')
   call dein#add('cespare/vim-toml')
   call dein#add('vim-airline/vim-airline-themes')
-  "call dein#add('Shougo/neosnippet.vim')
-  "call dein#add('Shougo/neosnippet-snippets')
 
   " Required:
   call dein#end()
@@ -40,6 +38,12 @@ endif
 set directory=${XDG_CACHE_DIR}/vim/
 set number
 set colorcolumn=101
+if !has('nvim') " Do this if regular vim
+  set viminfo+=n${XDG_CACHE_DIR}/vim/history
+endif
+
 let g:airline_theme='wombat' " TODO: Create custom airline theme using standard colors
+
+
 highlight ColorColumn ctermbg=8
 highlight LineNr ctermfg=7
