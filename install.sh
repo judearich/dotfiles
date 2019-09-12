@@ -15,7 +15,7 @@ fi
 
 
 # Install dotfiles
-mkdir -p ${XDG_CACHE_DIR}/{nvim} # Make cache directories
+mkdir -p ${XDG_CACHE_DIR}/nvim   # Make cache directories
 mkdir -p ${XDG_DATA_DIR}	 # Make data directory
 mkdir -p ${XDG_CONFIG_DIR}	 # Make config directory
 
@@ -23,7 +23,6 @@ cp -ar home/.config/* ${XDG_CONFIG_DIR}  # Copy config files
 
 
 # Install Dein (n)vim plugin manager
-deindir = ${HOME}/.config/dein
-deinfile = $(mktemp dein.XXXXX)
-curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > ${deinfile}
-sh ${deinfile} ${deindir} # Actually install dein.
+deindir=${XDG_DATA_DIR}/dein
+curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh | \
+sh -s -- ${deindir} # Actually install dein.
