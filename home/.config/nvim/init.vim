@@ -39,7 +39,7 @@ set directory=${XDG_CACHE_DIR}/vim/
 set number
 set colorcolumn=101
 if !has('nvim') " Do this if regular vim
-  set viminfo+=n${XDG_CACHE_DIR}/vim/history
+  set viminfo+=n~/.cache/vim/history
 endif
 
 let g:airline_theme='base16' " TODO: Clone theme to remove ugly grey background
