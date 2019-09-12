@@ -42,7 +42,7 @@ if !has('nvim') " Do this if regular vim
   set viminfo+=n${XDG_CACHE_DIR}/vim/history
 endif
 
-let g:airline_theme='wombat' " TODO: Create custom airline theme using standard colors
+let g:airline_theme='base16' " TODO: Clone theme to remove ugly grey background
 
 
 highlight ColorColumn ctermbg=8
