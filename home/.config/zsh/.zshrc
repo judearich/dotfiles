@@ -7,10 +7,8 @@ prompt bart green blue yellow cyan
 alias ls='ls --color=auto'
 
 ## Only use tmux aliases if we have tmux
-if [ command -v tmux]; then
-	alias ta='tmux -f ${XDG_CONFIG_DIR}/tmux/tmux.conf a'
-	alias tmux='tmux -f ${XDG_CONFIG_DIR}/tmux/tmux.conf'
-fi
+command -v tmux > /dev/null && alias ta='tmux -f ${XDG_CONFIG_DIR}/tmux/tmux.conf a'
+command -v tmux > /dev/null && alias tmux='tmux -f ${XDG_CONFIG_DIR}/tmux/tmux.conf'
 
 # Options
 setopt histignorealldups # History is all unique
@@ -47,4 +45,4 @@ eval "$(dircolors -b)"
 source ${XDG_CONFIG_DIR}/zsh/cmp.zsh # Colored man pages
 
 # Run fortune if installed
-command -v fortune && fortune -a
+command -v fortune > /dev/null && fortune -a
