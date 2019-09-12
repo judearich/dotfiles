@@ -3,10 +3,6 @@
 autoload -Uz promptinit; promptinit
 prompt bart green blue yellow cyan
 
-# Set Variables
-export GNUPGHOME="$XDG_DATA_HOME/gnupg"
-export LESSHISTFILE=- # Less no history
-
 # Aliases
 alias ls='ls --color=auto'
 alias ta='tmux -f $XDG_CONFIG_HOME/tmux/tmux.conf a'
@@ -19,16 +15,7 @@ setopt histignorespace   # Start a command with a space doesn't add it to histor
 
 
 # Vi
-export EDITOR=vi
 bindkey -v
-
-# Misc
-export PAGER=less
-
-# History stuff
-HISTSIZE=1000
-SAVEHIST=1000
-HISTFILE=~/.cache/zsh_history
 
 # Use modern completion system
 #autoload -Uz compinit; compinit -D
