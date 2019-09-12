@@ -5,12 +5,17 @@ prompt bart green blue yellow cyan
 
 # Aliases
 alias ls='ls --color=auto'
-alias ta='tmux -f ${XDG_CONFIG_DIR}/tmux/tmux.conf a'
-alias tmux='tmux -f ${XDG_CONFIG_DIR}/tmux/tmux.conf'
+
+## Only use tmux aliases if we have tmux
+if [ command -v tmux]; then
+	alias ta='tmux -f ${XDG_CONFIG_DIR}/tmux/tmux.conf a'
+	alias tmux='tmux -f ${XDG_CONFIG_DIR}/tmux/tmux.conf'
+fi
 
 # Options
 setopt histignorealldups # History is all unique
 setopt histignorespace   # Start a command with a space doesn't add it to history
+setopt auto_cd		 # chdir just by typing a path
 
 
 # Vi
@@ -24,7 +29,6 @@ bindkey -v
 #zstyle ':completion:*' format 'Completing %d'
 #zstyle ':completion:*' group-name ''
 #zstyle ':completion:*' menu select=2
-eval "$(dircolors -b)"
 #zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 #zstyle ':completion:*' list-colors ''
 #zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
@@ -37,8 +41,10 @@ eval "$(dircolors -b)"
 #zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 #zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
+eval "$(dircolors -b)"
+
 # Scripts
 source ${XDG_CONFIG_DIR}/zsh/cmp.zsh # Colored man pages
 
-# Run before interactive
-fortune -a
+# Run fortune if installed
+command -v fortune && fortune -a
