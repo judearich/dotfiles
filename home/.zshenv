@@ -1,15 +1,15 @@
 
 # set XDG variables
 if [ -z "$XDG_CACHE_DIR" ]; then
-	XDG_CACHE_DIR="${HOME}/.cache"
+	export XDG_CACHE_DIR="${HOME}/.cache"
 fi
 
 if [ -z "${XDG_CONFIG_DIR}" ]; then
-	XDG_CONFIG_DIR="${HOME}/.config"
+	export XDG_CONFIG_DIR="${HOME}/.config"
 fi
 
 if [ -z "${XDG_DATA_DIR}" ]; then
-	XDG_DATA_DIR="${HOME}/.local/share"
+	export XDG_DATA_DIR="${HOME}/.local/share"
 fi
 
 ZDOTDIR="${XDG_CONFIG_DIR}/zsh"
@@ -17,6 +17,7 @@ ZDOTDIR="${XDG_CONFIG_DIR}/zsh"
 export GNUPGHOME="${XDG_DATA_DIR}/gnupg" # gpg use XDG dirs
 export LESSHISTFILE=- # Less no history
 
+#export VIMINIT='let $MYVIMRC="${XDG_CONFIG_DIR}/nvim/init.vim" | source $MYVIMRC'
 export MYVIMRC="${XDG_CONFIG_DIR}/nvim/init.vim"
 export VIMINIT="source $MYVIMRC"
 

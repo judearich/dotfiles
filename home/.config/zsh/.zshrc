@@ -5,9 +5,8 @@ prompt bart green blue yellow cyan
 
 # Aliases
 alias ls='ls --color=auto'
-alias ta='tmux -f $XDG_CONFIG_HOME/tmux/tmux.conf a'
-alias tmux='tmux -f $XDG_CONFIG_HOME/tmux/tmux.conf'
-export VIMINIT='let $MYVIMRC="$XDG_CONFIG_HOME/nvim/init.vim" | source $MYVIMRC'
+alias ta='tmux -f ${XDG_CONFIG_DIR}/tmux/tmux.conf a'
+alias tmux='tmux -f ${XDG_CONFIG_DIR}/tmux/tmux.conf'
 
 # Options
 setopt histignorealldups # History is all unique
@@ -39,7 +38,7 @@ eval "$(dircolors -b)"
 #zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
 # Scripts
-source $XDG_CONFIG_HOME/zsh/cmp.zsh # Colored man pages
+source ${XDG_CONFIG_DIR}/zsh/cmp.zsh # Colored man pages
 
 # Run before interactive
 fortune -a
