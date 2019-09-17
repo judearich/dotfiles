@@ -15,14 +15,16 @@ fi
 
 
 # Install dotfiles
-mkdir -p ${XDG_CACHE_DIR}/vim   # Make cache directories
-mkdir -p ${XDG_DATA_DIR}	 # Make data directory
-mkdir -p ${XDG_CONFIG_DIR}	 # Make config directory
+mkdir -p ${XDG_CACHE_DIR}/vim	# Make cache directories
+mkdir -p ${XDG_DATA_DIR}	# Make data directory
+mkdir -p ${XDG_CONFIG_DIR}	# Make config directory
+mkdir -p ${HOME}/.ssh/config.d	# Make ssh dirs
 
 cp -ar home/.config/* ${XDG_CONFIG_DIR}/  # Copy config files
 cp home/.zshenv ${HOME}/
+cp home/.ssh/config ${HOME}/.ssh/
 
 # Install Dein (n)vim plugin manager
 deindir=${XDG_DATA_DIR}/dein
 curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh | \
-sh -s -- ${deindir} # Actually install dein.
+	sh -s -- ${deindir} # Actually install dein
