@@ -35,7 +35,7 @@ endif
 "End dein Scripts-------------------------
 
 
-set directory=${XDG_CACHE_DIR}/vim/
+set directory=~/.cache/vim/
 set number
 set colorcolumn=101
 if !has('nvim') " Do this if regular vim
