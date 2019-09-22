@@ -1,3 +1,4 @@
+export LC_ALL="en_US.UTF-8"
 
 # set XDG variables
 if [ -z "$XDG_CACHE_DIR" ]; then
